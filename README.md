@@ -1,5 +1,4 @@
 # simple-kanban-js
-(Kanban Board)
 
 A simple, drag-and-drop Kanban board built with HTML, CSS, and JavaScript, featuring task persistence using localStorage. Ideal for tracking tasks. Supports task creation, deletion, and moving tasks between columns.
 
