@@ -1,0 +1,184 @@
+/* =============================
+   Global Page Style
+============================= */
+body {
+  font-family: "Noto Sans JP", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  background-color: #e7dcc8; /* fallback */
+  background-size: 400px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* =============================
+   Header
+============================= */
+/* Header */
+.head {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
+  color: #2d2d2d;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  border-bottom: 4px solid #a67c52; /* warm wood accent */
+}
+
+.head h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+  font-family: "Sawarabi Mincho", serif;  /* Japanese brush/mincho style */
+  color: #2c1810;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+
+/* =============================
+   Board Layout
+============================= */
+.board {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* =============================
+   Columns
+============================= */
+.column {
+  flex: 1;
+  min-width: 280px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+.column:hover {
+  transform: translateY(-3px);
+}
+.column h2 {
+  text-align: center;
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Column color accents */
+#todo {
+  border-top: 6px solid #f56565; /* red */
+}
+#in-progress {
+  border-top: 6px solid #f6ad55; /* orange */
+}
+#done {
+  border-top: 6px solid #48bb78; /* green */
+}
+
+/* =============================
+   Input + Add Button
+============================= */
+.tasks-in-btn {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.task-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.2s;
+}
+.task-input:focus {
+  border-color: #667eea;
+}
+.add-task-btn {
+  background: #667eea;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.add-task-btn:hover {
+  background: #5a67d8;
+}
+
+/* =============================
+   Task Container
+============================= */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =============================
+   Task Sticky Note Style
+============================= */
+.task {
+  position: relative;
+  background: #fff8b3; /* pale yellow sticky note */
+  padding: 20px 14px 14px;
+  border-radius: 6px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.task:active {
+  cursor: grabbing;
+}
+.task:hover {
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 4px 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Pin */
+.task::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Pin colors by column */
+#todo .task::before {
+  background: #e53e3e; /* red */
+}
+#in-progress .task::before {
+  background: #ed8936; /* orange */
+}
+#done .task::before {
+  background: #38a169; /* green */
+}
+
+/* =============================
+   Delete Button
+============================= */
+.delete-btn {
+  cursor: pointer;
+  color: #e53e3e;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+.delete-btn:hover {
+  color: #c53030;
+}
+
